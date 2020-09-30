@@ -4,4 +4,5 @@ resource "aws_route53_record" "noRoute53RecordSet" {
   ttl             = 30
   type            = "NS"
   zone_id         = "some-zone-id"
+  records         = ["<record>"]
 }
