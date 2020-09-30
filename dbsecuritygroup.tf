@@ -2,7 +2,7 @@ resource "aws_db_security_group" "rdsHostsHigherThan256" {
   name = "rds_sg"
 
   ingress {
-    cidr = "192.164.0.0/23"
+    cidr = "<ingress.cidr>"
   }
 }
 
@@ -10,7 +10,7 @@ resource "aws_db_security_group" "rdsIsPublic" {
   name = "rds_sg"
 
   ingress {
-    cidr = "0.0.0.0/0"
+    cidr = "<ingress.cidr>"
   }
 }
 
@@ -18,6 +18,6 @@ resource "aws_db_security_group" "rdsScopeIsPublic" {
   name = "rds_sg"
 
   ingress {
-    cidr = "192.164.0.0/32"
+    cidr = "<ingress.cidr>"
   }
 }
