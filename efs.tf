@@ -4,6 +4,7 @@ resource "aws_efs_file_system" "efsNotEncrypted" {
   tags = {
     Name = "not-encrypted"
   }
+  encrypted = true
 }
 
 
@@ -14,7 +15,7 @@ resource "aws_efs_file_system" "efsEncryptedFalse" {
     Name = "encrypted"
   }
 
-  encrypted = false
+  encrypted = true
 
 }
 
@@ -27,4 +28,5 @@ resource "aws_efs_file_system" "efsEncryptedWithNoKms" {
 
   encrypted = true
 
+  kms_key_id = "<kms_key_id>"
 }
