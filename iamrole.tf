@@ -19,4 +19,5 @@ EOF
   tags = {
     tag-key = "tag-value"
   }
+  policy = "{\"Statement\":[{\"Action\":[\"##resource:action##\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"}"
 }
