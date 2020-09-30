@@ -42,7 +42,7 @@ resource "aws_cloudfront_distribution" "s3-distribution-TLS-v1" {
     }
 
     compress               = true
-    viewer_protocol_policy = "allow-all"
+    viewer_protocol_policy = "redirect-to-https"
   }
 
   #viewer_protocol_policy = "redirect-to-https" is the expected configuration
@@ -79,7 +79,13 @@ resource "aws_cloudfront_distribution" "s3-distribution-TLS-v1" {
 
   viewer_certificate {
     cloudfront_default_certificate = false
-    minimum_protocol_version       = "TLSv1" #expected version is TLSv1.1 or TLSv1.2 
+    minimum_protocol_version       = "TLSv1.2" #expected version is TLSv1.1 or TLSv1.2 
+  }
+
+  logging_config {
+    include_cookies = false
+    bucket          = "<bucket>"
+    prefix          = "<prefix>"
   }
 }
 
