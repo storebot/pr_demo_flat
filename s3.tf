@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "noS3BucketSseRules" {
   acl    = "private"
 
   tags = {
-    Name        = "nos3BucketSseRules1"
+    Name        = "nos3BucketSseRules2"
     Environment = "Dev"
   }
 }
