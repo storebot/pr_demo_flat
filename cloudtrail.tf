@@ -10,7 +10,7 @@ resource "aws_cloudtrail" "false-multi-region" {
   s3_bucket_name                = "some-s3-bucket"
   s3_key_prefix                 = "prefix"
   include_global_service_events = false
-  is_multi_region_trail         = false
+  is_multi_region_trail         = true
 }
 
 resource "aws_cloudtrail" "missing-kms" {
