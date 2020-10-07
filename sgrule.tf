@@ -1,6 +1,6 @@
 resource "aws_security_group_rule" "acme_web_rule_wide_open" {
   type              = "ingress"
-  from_port         = 0
+  from_port         = 65535
   to_port           = 65535
   protocol          = "tcp"
   cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
@@ -21,7 +21,7 @@ resource "aws_security_group_rule" "acme_web_rule_unrestricted" {
   from_port         = 0
   to_port           = 0
   protocol          = "-1"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_unrestricted.id
 }
 
@@ -39,7 +39,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_ssh" {
   from_port         = 22
   to_port           = 22
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_ssh.id
 }
 
@@ -56,7 +56,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_http" {
   from_port         = 80
   to_port           = 80
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_http.id
 }
 
@@ -73,7 +73,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_135" {
   from_port         = 135
   to_port           = 135
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_135.id
 }
 
@@ -91,7 +91,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_138" {
   from_port         = 138
   to_port           = 138
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_138.id
 }
 
@@ -109,7 +109,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_138_udp"
   from_port         = 138
   to_port           = 138
   protocol          = "udp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_138_udp.id
 }
 
@@ -127,7 +127,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_https" {
   from_port         = 443
   to_port           = 443
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_https.id
 }
 
@@ -144,7 +144,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_rdp" {
   from_port         = 3389
   to_port           = 3389
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_rdp.id
 }
 
@@ -161,7 +161,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_137" {
   from_port         = 137
   to_port           = 137
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_137.id
 }
 
@@ -179,7 +179,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_137_udp"
   from_port         = 137
   to_port           = 137
   protocol          = "udp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_137_udp.id
 }
 
@@ -197,7 +197,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_139" {
   from_port         = 139
   to_port           = 139
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_139.id
 }
 
@@ -215,7 +215,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_139_udp"
   from_port         = 139
   to_port           = 139
   protocol          = "udp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_139_udp.id
 }
 
@@ -233,7 +233,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_161" {
   from_port         = 161
   to_port           = 161
   protocol          = "udp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_161.id
 }
 
@@ -250,7 +250,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_389" {
   from_port         = 389
   to_port           = 389
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_389.id
 }
 
@@ -267,7 +267,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_636" {
   from_port         = 636
   to_port           = 636
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_636.id
 }
 
@@ -284,7 +284,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_1433" {
   from_port         = 1433
   to_port           = 1433
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_1433.id
 }
 
@@ -301,7 +301,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_1434" {
   from_port         = 1434
   to_port           = 1434
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_1434.id
 }
 
@@ -319,7 +319,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_1434_udp
   from_port         = 1434
   to_port           = 1434
   protocol          = "udp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_1434_udp.id
 }
 
@@ -337,7 +337,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_1521" {
   from_port         = 1521
   to_port           = 1521
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_1521.id
 }
 
@@ -354,7 +354,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_2382" {
   from_port         = 2382
   to_port           = 2382
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_2382.id
 }
 
@@ -371,7 +371,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_2383" {
   from_port         = 2383
   to_port           = 2383
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_2383.id
 }
 
@@ -388,7 +388,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_2483" {
   from_port         = 2483
   to_port           = 2483
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_2483.id
 }
 
@@ -406,7 +406,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_2484" {
   from_port         = 2484
   to_port           = 2484
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_2484.id
 }
 
@@ -442,7 +442,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_3000" {
   from_port         = 3000
   to_port           = 3000
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_3000.id
 }
 
@@ -459,7 +459,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_3306" {
   from_port         = 3306
   to_port           = 3306
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_3306.id
 }
 
@@ -476,7 +476,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_3020" {
   from_port         = 3020
   to_port           = 3020
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_3020.id
 }
 
@@ -493,7 +493,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_4505" {
   from_port         = 4505
   to_port           = 4505
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_4505.id
 }
 
@@ -510,7 +510,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_4506" {
   from_port         = 4506
   to_port           = 4506
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_4506.id
 }
 
@@ -527,7 +527,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_5432" {
   from_port         = 5432
   to_port           = 5432
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_5432.id
 }
 
@@ -544,7 +544,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_6379" {
   from_port         = 6379
   to_port           = 6379
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_6379.id
 }
 
@@ -561,7 +561,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_7000" {
   from_port         = 7000
   to_port           = 7000
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_7000.id
 }
 
@@ -578,7 +578,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_7001" {
   from_port         = 7001
   to_port           = 7001
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_7001.id
 }
 
@@ -595,7 +595,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_7199" {
   from_port         = 7199
   to_port           = 7199
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_7199.id
 }
 
@@ -612,7 +612,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_8000" {
   from_port         = 8000
   to_port           = 8000
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_8000.id
 }
 
@@ -629,7 +629,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_8080" {
   from_port         = 8080
   to_port           = 8080
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_8080.id
 }
 
@@ -646,7 +646,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_8140" {
   from_port         = 8140
   to_port           = 8140
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_8140.id
 }
 
@@ -663,7 +663,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_8888" {
   from_port         = 8888
   to_port           = 8888
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_8888.id
 }
 
@@ -680,7 +680,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_9000" {
   from_port         = 9000
   to_port           = 9000
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_9000.id
 }
 
@@ -697,7 +697,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_9090" {
   from_port         = 9090
   to_port           = 9090
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_9090.id
 }
 
@@ -714,7 +714,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_9042" {
   from_port         = 9042
   to_port           = 9042
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_9042.id
 }
 
@@ -731,7 +731,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_9160" {
   from_port         = 9160
   to_port           = 9160
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_9160.id
 }
 
@@ -748,7 +748,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_9200" {
   from_port         = 9200
   to_port           = 9200
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_9200.id
 }
 
@@ -765,7 +765,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_9300" {
   from_port         = 9300
   to_port           = 9300
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_9300.id
 }
 
@@ -782,7 +782,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_11211" {
   from_port         = 11211
   to_port           = 11211
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_11211.id
 }
 
@@ -799,7 +799,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_11214" {
   from_port         = 11214
   to_port           = 11214
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_11214.id
 }
 
@@ -817,7 +817,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_11214_ud
   from_port         = 11214
   to_port           = 11214
   protocol          = "udp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_11214_udp.id
 }
 
@@ -835,7 +835,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_11215" {
   from_port         = 11215
   to_port           = 11215
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_11215.id
 }
 
@@ -853,7 +853,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_11215_ud
   from_port         = 11215
   to_port           = 11215
   protocol          = "udp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_11215_udp.id
 }
 
@@ -871,7 +871,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_27017" {
   from_port         = 27017
   to_port           = 27017
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_27017.id
 }
 
@@ -888,7 +888,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_27018" {
   from_port         = 27018
   to_port           = 27018
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_27018.id
 }
 
@@ -905,7 +905,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_61620" {
   from_port         = 61620
   to_port           = 61620
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "172.217.0.0/24"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_61620.id
 }
 
@@ -922,7 +922,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_61621" {
   from_port         = 61621
   to_port           = 61621
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_61621.id
 }
 
@@ -940,7 +940,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_23" {
   from_port         = 23
   to_port           = 23
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_23.id
 }
 
@@ -958,7 +958,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_25" {
   from_port         = 25
   to_port           = 25
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_25.id
 }
 
@@ -976,7 +976,7 @@ resource "aws_security_group_rule" "acme_web_rule_port_open_to_internet_445" {
   from_port         = 445
   to_port           = 445
   protocol          = "tcp"
-  cidr_blocks       = ["0.0.0.0/0", "172.217.0.0/24"]
+  cidr_blocks       = ["<cidr>", "<cidr>"]
   security_group_id = aws_security_group.acme_web_rule_port_open_to_internet_445.id
 }
 
