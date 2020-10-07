@@ -4,7 +4,7 @@ resource "aws_load_balancer_policy" "elbWeakCipher" {
   policy_type_name   = "SSLNegotiationPolicyType"
 
   policy_attribute {
-    name  = "ECDHE-RSA-RC4-SHA"
+    name  = "AES256-SHA256"
     value = "true"
   }
 }
@@ -15,7 +15,7 @@ resource "aws_load_balancer_policy" "elbSsLTsLProtocol" {
   policy_type_name   = "SSLNegotiationPolicyType"
 
   policy_attribute {
-    name  = "Protocol-SSLv3"
+    name  = "Protocol-TLSv1.2"
     value = "true"
   }
 }
