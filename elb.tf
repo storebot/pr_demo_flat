@@ -10,9 +10,9 @@ resource "aws_elb" "elbNotSecured" {
 
   listener {
     instance_port     = 8000
-    instance_protocol = "http"
+    instance_protocol = "https"
     lb_port           = 80
-    lb_protocol       = "http"
+    lb_protocol       = "https"
   }
 
   listener {
