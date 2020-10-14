@@ -14,7 +14,7 @@ resource "aws_launch_configuration" "blockUnEcryted" {
 
   ebs_block_device {
     device_name = "ebs-device"
-    encrypted   = false
+    encrypted   = true
   }
 
   lifecycle {
