@@ -25,7 +25,7 @@ resource "aws_elasticache_cluster" "redis_version_non_compliant_1" {
   node_type            = "cache.m4.large"
   num_cache_nodes      = 1
   parameter_group_name = "default.redis3.2"
-  engine_version       = "4.0.9"
+  engine_version       = "4.0.10"
   port                 = 6379
 }
 
@@ -35,7 +35,7 @@ resource "aws_elasticache_cluster" "redis_version_non_compliant_2" {
   node_type            = "cache.m4.large"
   num_cache_nodes      = 1
   parameter_group_name = "default.redis3.2"
-  engine_version       = "3.1.10"
+  engine_version       = "4.0.10"
   port                 = 6379
 }
 
@@ -45,6 +45,6 @@ resource "aws_elasticache_cluster" "redis_version_non_compliant_3" {
   node_type            = "cache.m4.large"
   num_cache_nodes      = 1
   parameter_group_name = "default.redis3.2"
-  engine_version       = "3.0.10"
+  engine_version       = "4.0.10"
   port                 = 6379
 }
